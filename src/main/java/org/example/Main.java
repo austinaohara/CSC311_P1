@@ -4,14 +4,36 @@ package org.example;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        // Create a Vehicle object
+        Vehicle v1 = new Vehicle(2, "Blue", 1.2f, "Gasoline");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // Test getters
+        System.out.println("Vehicle wheels: " + v1.getNumberOfWheels());
+        System.out.println("Vehicle color: " + v1.getColor());
+        System.out.println("Vehicle engine size: " + v1.getEngineSize());
+        System.out.println("Vehicle fuel type: " + v1.getFuelType());
+
+        // Test setters
+        v1.setColor("Red");
+        v1.setEngineSize(1.5f);
+        System.out.println("Updated vehicle color: " + v1.getColor());
+        System.out.println("Updated vehicle engine size: " + v1.getEngineSize());
+
+        System.out.println();
+
+        // Create a Car object
+        Car c1 = new Car(4, "Black", 2.0f, "Gasoline", "Toyota");
+
+        // Test Car methods
+        c1.honk();
+        c1.displayInfo();
+
+        System.out.println();
+
+        // Test inherited setters/getters on Car
+        c1.setFuelType("Hybrid");
+        c1.setColor("Silver");
+        System.out.println("After updates:");
+        c1.displayInfo();
     }
 }
